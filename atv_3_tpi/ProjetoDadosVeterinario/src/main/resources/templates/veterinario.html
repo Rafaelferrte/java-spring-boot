@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados Veterinário</title>
+
+    <style>
+        .formulario {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .resultado {
+            background: #e7f3fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Cadastro de Veterinário</h2>
+
+<form th:action="@{/salvar-veterinario}" method="POST">
+
+    <div class="formulario">
+        <label>Nome do Veterinário</label>
+        <input type="text" name="nomeVeterinario"
+               required placeholder="Digite o nome">
+    </div>
+
+    <div class="formulario">
+        <label>Área de Especialização</label>
+        <select name="especializacao" required>
+            <option value="Clínica Geral">Clínica Geral</option>
+            <option value="Cirurgia">Cirurgia</option>
+            <option value="Dermatologia">Dermatologia</option>
+            <option value="Animais Silvestres">Animais Silvestres</option>
+            <option value="Ortopedia">Ortopedia</option>
+        </select>
+    </div>
+
+    <div class="formulario">
+        <label>Anos de Atuação</label>
+        <input type="number" name="anosAtuacao"
+               min="0" required>
+    </div>
+
+    <div class="formulario">
+        <label>Sexo</label>
+        <select name="sexo" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Não informado">Não informado</option>
+        </select>
+    </div>
+
+    <div class="formulario">
+        <label>Ano de Formação</label>
+        <input type="number" name="formacao"
+               min="1900" required>
+    </div>
+
+    <button type="submit">Cadastrar Veterinário</button>
+
+</form>
+
+<div th:if="${sucesso}" class="resultado">
+
+    <h3>Veterinário cadastrado com sucesso!</h3>
+
+    <p><strong>Nome do Veterinário:</strong>
+        <span th:text="${nomeVeterinario}"></span>
+    </p>
+
+    <p><strong>Área de Especialização:</strong>
+        <span th:text="${especializacao}"></span>
+    </p>
+
+    <p><strong>Anos de Atuação na Área:</strong>
+        <span th:text="${anosAtuacao}"></span>
+    </p>
+
+    <p><strong>Sexo:</strong>
+        <span th:text="${sexo}"></span>
+    </p>
+
+    <p><strong>Ano de Formação:</strong>
+        <span th:text="${formacao}"></span>
+    </p>
+
+</div>
+
+</body>
+</html>

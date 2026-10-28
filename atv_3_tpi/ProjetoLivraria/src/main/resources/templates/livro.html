@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Livraria</title>
+
+    <style>
+        .formulario {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .resultado {
+            background: #e7f3fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Cadastro de Livro</h2>
+
+<form th:action="@{/salvar-livro}" method="POST">
+
+    <div class="formulario">
+        <label>Nome do Livro</label>
+        <input type="text" name="nomeLivro" required
+               placeholder="Ex: Dom Casmurro">
+    </div>
+
+    <div class="formulario">
+        <label>ISBN</label>
+        <input type="text" name="isbn" required
+               placeholder="Digite o ISBN">
+    </div>
+
+    <div class="formulario">
+        <label>Páginas</label>
+        <input type="number" name="paginas" required min="1">
+    </div>
+
+    <div class="formulario">
+        <label>Autor</label>
+        <input type="text" name="autor" required
+               placeholder="Nome do autor">
+    </div>
+
+    <div class="formulario">
+        <label>Editora</label>
+        <input type="text" name="editora" required
+               placeholder="Nome da editora">
+    </div>
+
+    <div class="formulario">
+        <label>Categoria</label>
+        <select name="categoria" required>
+            <option value="Romance">Romance</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Outros">Outros</option>
+        </select>
+    </div>
+
+    <button type="submit">Cadastrar Livro</button>
+
+</form>
+
+<div th:if="${sucesso}" class="resultado">
+
+    <h3>Livro cadastrado com sucesso!</h3>
+
+    <p><strong>Nome do Livro:</strong>
+        <span th:text="${nomeLivro}"></span>
+    </p>
+
+    <p><strong>ISBN:</strong>
+        <span th:text="${isbn}"></span>
+    </p>
+
+    <p><strong>Páginas:</strong>
+        <span th:text="${paginas}"></span>
+    </p>
+
+    <p><strong>Autor:</strong>
+        <span th:text="${autor}"></span>
+    </p>
+
+    <p><strong>Editora:</strong>
+        <span th:text="${editora}"></span>
+    </p>
+
+    <p><strong>Categoria:</strong>
+        <span th:text="${categoria}"></span>
+    </p>
+
+</div>
+
+</body>
+</html>
