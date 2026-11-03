@@ -1,25 +1,50 @@
 # Java e Spring Boot
 
-Repositório de estudos e práticas com **Java** e **Spring Boot**, organizado para registrar minha evolução no desenvolvimento de aplicações backend.
+Repositório de estudos e projetos acadêmicos desenvolvidos com **Java**, **Spring Boot** e Maven.
 
-## Objetivos de aprendizagem
+O objetivo é praticar a construção de aplicações web, organização em camadas, orientação a objetos, formulários e persistência de dados.
 
-- Praticar a linguagem Java e orientação a objetos.
-- Conhecer a estrutura de projetos com Spring Boot.
-- Desenvolver endpoints e aplicações web.
-- Aplicar conceitos de organização e manutenção de código.
+## Projetos e exercícios
 
-## Organização
+Entre os diretórios presentes no repositório:
 
-Os diretórios e exercícios estão organizados conforme as atividades desenvolvidas durante os estudos. Cada prática representa uma etapa do aprendizado.
+- **Exemplo1_Spring:** aplicação inicial com Spring Boot e controller.
+- **ExercicioCadastrarEventos:** exercício de cadastro de eventos.
+- **ProjetoBdH2:** aplicação de cadastro de produtos com banco H2.
+- **ProjetoDadosVeterinario:** projeto relacionado ao cadastro de dados veterinários.
+- **ProjetoLivraria:** exercício/projeto com domínio de livraria.
+- **exemplo_paciente:** exemplo de aplicação com domínio de pacientes.
+- **formularioExemplo:** exemplo de formulário web.
+- **exemplo2_model_atributos** e **exemplo3_model_atributos:** práticas com atributos e model.
+
+Os diretórios são projetos independentes, criados conforme as atividades e conteúdos estudados.
 
 ## Tecnologias
 
 - Java
 - Spring Boot
+- Maven
+- H2 (no projeto correspondente)
+- HTML e templates Thymeleaf (nas aplicações web)
 
-> Repositório educacional em evolução. Os exemplos são desenvolvidos durante meus estudos e podem receber melhorias conforme avanço no conteúdo.
+## Como executar
+
+Cada projeto possui seu próprio `pom.xml`. Para executar um projeto específico, entre em seu diretório e utilize o Maven Wrapper quando disponível:
+
+**Linux / macOS**
+```bash
+./mvnw spring-boot:run
+```
+
+**Windows**
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+A porta e as configurações de execução dependem do projeto escolhido; consulte seu `application.properties`.
 
 ## Autor
 
-**Rafael Ferrete** · [GitHub](https://github.com/Rafaelferrte)
+**Rafael Ferrete** · Estudante de Desenvolvimento de Software Multiplataforma na Fatec.
+
+[GitHub](https://github.com/Rafaelferrte)
